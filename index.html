@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Text Editor</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <style>
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+
+    .blink {
+      animation: blinker 1s linear infinite;
+    }
+  </style>
+<body>
+  <div class="toolbar">
+  <button onclick="format('bold')" title="bold"
+>
+  <img src="Resources/bold.png" alt="Bold" width="10">
+<i class="fas fa-bold"></i></button>
+  <button onclick="format('italic')" title="italic"
+><img src="Resources/italic.png" alt="Bold" width="10">
+<i class="fas fa-italic"></i></button>
+  <button onclick="format('underline')" title="underline"
+><img src="Resources/underline.png" alt="Bold" width="10">
+<i class="fas fa-underline"></i></button>
+  <button onclick="align('left')"><img src="Resources/left.png" alt="Bold" width="10">
+<i class="fas fa-align-left"></i></button>
+  <button onclick="align('center')"><img src="Resources/center.png" alt="Bold" width="10">
+<i class="fas fa-align-center"></i></button>
+  <button onclick="align('right')"><img src="Resources/right.png" alt="Bold" width="10">
+<i class="fas fa-align-right"></i></button>
+  <button onclick="align('justify')"><img src="Resources/justify.png" alt="Bold" width="10">
+<i class="fas fa-align-justify"></i></button>
+  <button onclick="document.execCommand('undo')" title="undo"
+><img src="Resources/undo.png" alt="Bold" width="10">
+<i class="fas fa-undo"></i></button>
+  <button onclick="document.execCommand('redo')" title="redo"
+><img src="Resources/redo.png" alt="Bold" width="10">
+<i class="fas fa-redo"></i></button>
+  <button onclick="format('foreColor')">
+    <img src="Resources/font.png" alt="Bold" width="10">
+    <input type="color" onchange="setColor(this.value)" title="Font Color"
+           style="width: 20px; height: 10px; padding: 0; border: none; margin: 0;" />
+  </button>
+</div>
+
+</div>
+<p class="blink" style="color: red; font-weight: bold;">You can start your work here!!</p>
+<div style="border: 2px solid Black;" id="editor" contenteditable="true">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
